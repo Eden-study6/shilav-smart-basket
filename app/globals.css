@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/**
+ * Shilav-inspired soft pastel palette.
+ * Warm cream base, soft sage, gentle terracotta, blush baby pink and baby blue.
+ * Light-only by design: the brand palette is pastel and does not invert well,
+ * so we opt out of the scaffold's automatic dark mode.
+ */
+@theme {
+  /* Warm cream — page background and card surfaces */
+  --color-cream-50: #fefbf7;
+  --color-cream-100: #fdf6ee;
+  --color-cream-200: #f8ecdf;
+  --color-cream-300: #f0dfcc;
+
+  /* Soft sage — calm secondary, milestone accents */
+  --color-sage-100: #eaf0e8;
+  --color-sage-200: #dce6da;
+  --color-sage-300: #c2d4bf;
+  --color-sage-400: #a8bfa8;
+  --color-sage-500: #8aa78c;
+  --color-sage-600: #6f8b72;
+
+  /* Gentle terracotta — primary action, warm and non-aggressive */
+  --color-terracotta-100: #fbeae2;
+  --color-terracotta-200: #f4d2c3;
+  --color-terracotta-300: #eab49b;
+  --color-terracotta-400: #d98e73;
+  --color-terracotta-500: #c4755a;
+  --color-terracotta-600: #a75e46;
+
+  /* Blush baby pink */
+  --color-blush-100: #fdeef0;
+  --color-blush-200: #f9dade;
+  --color-blush-300: #f2bfc6;
+  --color-blush-400: #e9a8b0;
+
+  /* Baby blue */
+  --color-sky-baby-100: #eaf3f8;
+  --color-sky-baby-200: #d6e7f0;
+  --color-sky-baby-300: #b5d2e3;
+  --color-sky-baby-400: #9bc0d9;
+
+  /* Warm neutral text tones — softer than pure black on cream */
+  --color-ink: #4a3f3a;
+  --color-ink-muted: #8a7c74;
+  --color-ink-light: #b3a79f;
+
+  --font-sans: var(--font-heebo), "Heebo", system-ui, sans-serif;
+
+  /* Generous, rounded shapes suit the pastel brand */
+  --radius-basket: 1.25rem;
+}
+
+body {
+  background-color: var(--color-cream-100);
+  color: var(--color-ink);
+}
+
+/**
+ * RTL guardrails: the UI is Hebrew-first, so anything directional must flip.
+ * Use logical spacing utilities (ms, me, ps, pe) in components; these rules cover
+ * the few browser defaults that are not logical.
+ */
+[dir="rtl"] {
+  text-align: start;
+}
+
+/* Numbers, prices and sizes stay LTR even inside RTL text */
+.ltr-nums {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
